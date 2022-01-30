@@ -31,7 +31,9 @@ submitBtn.addEventListener("click", (event) => {
                 // console.log(event.target.getAttribute("data-artist"));
                 const lyricUrl = ` https://api.lyrics.ovh/v1/${event.target.getAttribute("data-artist")}/${event.target.getAttribute("data-title")}`;
                 fetch(lyricUrl).then((data) => data.json()).then(data=>{
-                    document.querySelector("#result").innerHTML = data["lyrics"].replace(/(\r\n|\r|\n)/g, '<br>');
+                    document.querySelector("#result").innerHTML = `<h1>${event.target.getAttribute("data-title")}</h1>
+                    <p><strong>Artist: </Strong>${event.target.getAttribute("data-artist")}</p>                    
+                    <p>${data["lyrics"].replace(/(\r\n|\r|\n)/g, '<br>')}</p>`;
                     console.log(data["lyrics"]);
                 })
             })
