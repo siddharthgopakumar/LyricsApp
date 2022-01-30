@@ -1,5 +1,6 @@
 
-header {
+@media (min-width: 800px) {
+    header {
     display: flex;
     flex-direction: column; 
     align-items: center;        
@@ -62,4 +63,77 @@ body{
     background-color: rgb(255,64,64);
     border: none;
     color: floralwhite;
+}
+}
+@media (max-width: 800px)    {
+    header {
+        text-align: center;
+        font-size: 12px;
+        display: flex;
+        flex-direction: column; 
+        align-items: center;        
+        justify-content: center;
+        background-color: floralwhite;
+        height: 200px;
+        width: 100%;
+        border-bottom: solid 1px floralwhite;
+        box-shadow: 0px 1px 1px floralwhite;
+    }
+    form {
+        font-size: 15px;
+        border: 0.5px solid;
+        border-radius: 25px;    
+        width: 80%;
+        display: flex;
+        justify-content: space-between;
+        background-color: white;   
+    }
+    #search:focus{
+        outline: none;
+    }
+    #search {
+        padding-left: 15px;
+        border: none;
+        border-radius: 25px;
+        flex: 5;
+        height: 25px;
+        background-color:transparent;
+        /* text-align: center; */
+    }
+    #searchBtn{
+        font-size: 12px;
+        padding: none;
+        border: none;
+        border-radius: 25px;
+        flex: 2;
+        background-color: white;
+    }
+    body{
+        display: flex;
+        flex-direction: column;
+        align-items:center;
+    }
+    #result {    
+        display:flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: stretch;
+        width: 90%;
+        flex: 500px;
+        margin-top: 30px;
+        flex-wrap: wrap;
+        font-size: 12px;
+    } 
+    
+    .resultIndividual{
+        display: flex;
+        justify-content: space-between;
+    }
+    .lyricSearchBtn {
+        border-radius: 25px;
+        background-color: rgb(255,64,64);
+        border: none;
+        color: floralwhite;
+    }
+    }
 }
