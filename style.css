@@ -15,11 +15,13 @@ form {
     justify-content: space-between;
     background-color: white;   
 }
+
 #search {
     padding: none;
     border: none;
     border-radius: 25px;
     flex: 6;
+    text-align: center;
 }
 button{
     padding: none;
