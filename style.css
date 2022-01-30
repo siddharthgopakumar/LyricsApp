@@ -48,8 +48,9 @@ body{
     justify-content: space-around;
     align-items: stretch;
     width: 50%;
-    height:500px;
+    flex: 500px;
     margin-top: 30px;
+    flex-wrap: wrap;
 } 
 
 .resultIndividual{
