@@ -26,6 +26,7 @@ form {
     border: none;
     border-radius: 25px;
     flex: 6;
+    height: 35px;
     background-color:transparent;
     /* text-align: center; */
 }
@@ -49,7 +50,8 @@ body{
     width: 50%;
     height:500px;
     margin-top: 30px;
-}
+} 
+
 .resultIndividual{
     display: flex;
     justify-content: space-between;

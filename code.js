@@ -7,11 +7,16 @@ submitBtn.addEventListener("click", (event) => {
     fetch(url)
     .then((data)=>data.json())
     .then(data => {
+        if(document.querySelector("#result").hasChildNodes) {
+            document.querySelector("#result").innerHTML = '';
+        }
         for(let element of data["data"])   {    
-            console.log(element["title"] + " " + element["artist"]["name"]);
             const div = document.createElement("div");
             const para = document.createElement("para");
-            const button = document.createElement("button");  
+            const button = document.createElement("button");
+            button.classList.add("lyricSearchBtn");  
+            button.setAttribute("data-artist",element["artist"]["name"]);
+            button.setAttribute("data-title",element["title"]);
             div.classList.add("resultIndividual");
             para.textContent = `${element["artist"]["name"]} ${element["title"]}`;
             button.textContent= "Get Lyrics";
@@ -19,5 +24,22 @@ submitBtn.addEventListener("click", (event) => {
             div.appendChild(button);
             document.querySelector("#result").appendChild(div);
         }
-    }).catch((er)=> console.log(er));
-});
+    }).then(() => {
+        const nodeList = document.querySelectorAll(".lyricSearchBtn");
+        nodeList.forEach((node)=>{
+            node.addEventListener('click', (event) =>   {
+                // console.log(event.target.getAttribute("data-artist"));
+                const lyricUrl = ` https://api.lyrics.ovh/v1/${event.target.getAttribute("data-artist")}/${event.target.getAttribute("data-title")}`;
+                fetch(lyricUrl).then((data) => data.json()).then(data=>{
+                    document.querySelector("#result").textContent = data["lyrics"];
+                    console.log(data["lyrics"]);
+                })
+            })
+        }
+        );
+    }
+    );
+}
+);
+
+//(data["lyrics"])
