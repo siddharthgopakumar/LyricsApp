@@ -11,7 +11,8 @@ submitBtn.addEventListener("click", (event) => {
             console.log(element["title"] + " " + element["artist"]["name"]);
             const div = document.createElement("div");
             const para = document.createElement("para");
-            const button = document.createElement("button");
+            const button = document.createElement("button");  
+            div.classList.add("resultIndividual");
             para.textContent = `${element["artist"]["name"]} ${element["title"]}`;
             button.textContent= "Get Lyrics";
             div.appendChild(para);
